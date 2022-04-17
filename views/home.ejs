@@ -6,7 +6,12 @@
     <!-- <% console.log(posts); %> -->
     <% posts.forEach((post)=>{ %>
         <h1><%= post.title %></h1>
-        <p><%= post.body %></p>
+        <!-- <% let truncated = post.body.slice(0, 100); %>
+        <% truncated += "... "; %> -->
+        <p>
+            <%= truncated.slice(0, 100) + " ... " %>
+            <a href="/posts/<%= post.title %>">Read more</a>
+        </p>
     <% }) %>
 
 <%- include("partials/footer"); -%>
