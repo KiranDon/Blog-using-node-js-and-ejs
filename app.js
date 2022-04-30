@@ -55,7 +55,7 @@ app.post("/compose", function(req, res){
 
 // nodejs routing
 app.get("/posts/:postTitle", function(req, res){
-  // console.log(req.params.post);
+  // console.log(req);
   let requestedTitle = _.lowerCase(req.params.postTitle);
 
   posts.forEach((post)=>{
@@ -63,7 +63,6 @@ app.get("/posts/:postTitle", function(req, res){
     if(requestedTitle===currentTitle){
       // console.log("match found");
       res.render("post", {title:post.title, body:post.body})
-    
     }
   })
 
